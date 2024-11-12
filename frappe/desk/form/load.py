@@ -141,7 +141,7 @@ def get_docinfo(doc=None, doctype=None, name=None):
 def add_comments(doc, docinfo):
 	# divide comments into separate lists
 	docinfo.comments = []
-	docinfo.shared = []
+	docinfo.share_logs = []
 	docinfo.assignment_logs = []
 	docinfo.attachment_logs = []
 	docinfo.info_logs = []
@@ -160,7 +160,7 @@ def add_comments(doc, docinfo):
 				c.content = frappe.utils.markdown(c.content)
 				docinfo.comments.append(c)
 			case "Shared" | "Unshared":
-				docinfo.shared.append(c)
+				docinfo.share_logs.append(c)
 			case "Assignment Completed" | "Assigned":
 				docinfo.assignment_logs.append(c)
 			case "Attachment" | "Attachment Removed":
